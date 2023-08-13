@@ -31,6 +31,9 @@ import marvel from "./marvel.png";
 import jobit from "./jobit.png";
 import calendar from "./calendar.png";
 
+import instagram from "./instagram.png";
+import linkedin from "./linkedin.png";
+
 export {
   logo,
   logo2,
@@ -61,4 +64,6 @@ export {
   marvel,
   jobit,
   calendar,
+  instagram,
+  linkedin,
 };
