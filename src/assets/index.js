@@ -22,14 +22,14 @@ import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
 
-import meta from "./company/meta.png";
-import shopify from "./company/shopify.png";
-import starbucks from "./company/starbucks.png";
-import tesla from "./company/tesla.png";
+import kruger from "./company/kruger.png";
+import pil from "./company/pil.png";
+import antena from "./company/antena.png";
+import cen2 from "./company/cen2.png";
 
-import carrent from "./carrent.png";
+import marvel from "./marvel.png";
 import jobit from "./jobit.png";
-import tripguide from "./tripguide.png";
+import calendar from "./calendar.png";
 
 export {
   logo,
@@ -54,11 +54,11 @@ export {
   tailwind,
   typescript,
   threejs,
-  meta,
-  shopify,
-  starbucks,
-  tesla,
-  carrent,
+  kruger,
+  pil,
+  antena,
+  cen2,
+  marvel,
   jobit,
-  tripguide,
+  calendar,
 };

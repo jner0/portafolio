@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { services } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
-import { SectionWrapper } from '../hoc'
+import { SectionWrapper } from "../hoc";
 
 const ServiceCard = ({ index, title, icon }) => {
   return (
@@ -23,7 +23,9 @@ const ServiceCard = ({ index, title, icon }) => {
           className="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col"
         >
           <img src={icon} alt={title} className="w-16 h-16 object-contain" />
-          <h3 className="text-white text-[20px] font-bold text-center">{title}</h3>
+          <h3 className="text-white text-[20px] font-bold text-center">
+            {title}
+          </h3>
         </div>
       </motion.div>
     </Tilt>
@@ -42,12 +44,16 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
-        Soy un experto desarrollador de software con experiencia en TypeScript y
-        JavaScript y experiencia en marcos como React, Node.js y Tres.js.
-        Aprendo rápido y colaboro estrechamente con los clientes para crear
-        soluciones eficientes, escalables y fáciles de usar que resuelvan
-        problemas del mundo real. ¡Trabajemos juntos para hacer realidad tus
-        ideas!
+        Soy desarrollador de software con experiencia en desarrollo front-end
+        usando JavaScript y frameworks como React y Angular. Actualmente estoy
+        estudiando más sobre el desarrollo de back-end para convertirme en un
+        desarrollador Full-stack, me estoy enfocando principalmente en Node.js.
+        Comencé mi carrera en la Industria de la tecnología en el campo del
+        Soporte Técnico, lo que me permite trabajar con tiempos de entrega y
+        esto me ayudó mejorar mis habilidades de comunicación y la forma de
+        trabajar en equipo. Mi tiempo trabajando con plataformas de gestión de
+        datos fue lo que me motivó a ingresar en el mundo del desarrollo de
+        software.
       </motion.p>
 
       <div className="mt-20 flex flex-wrap gap-10">
