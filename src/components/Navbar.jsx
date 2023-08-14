@@ -3,13 +3,29 @@ import { Link } from "react-router-dom";
 
 import { styles } from "../styles";
 import { navLinks } from "../constants";
-import { logo, menu, close } from "../assets";
+import { logo, menu, close, en, es } from "../assets";
 
 const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
 
-  console.log(toggle);
+  const changeLanguage = async (language) => {
+    //console.log(data);
+    const requestJson = await fetch("../translations/en.json");
+    console.log(requestJson);
+    //   if (!requestJson.ok) {
+    //     throw new Error(`Failed to fetch: ${requestJson.statusText}`);
+    //   }
+    //   //const texts = await requestJson.json();
+    //   //console.log(texts);
+    // } catch (error) {
+    //   console.error("Error fetching translation:", error);
+    // }
+  };
+
+  const handleLanguage = (e) => {
+    changeLanguage(e.target.parentElement.dataset.languaje);
+  };
 
   return (
     <nav
@@ -34,7 +50,28 @@ const Navbar = () => {
 
         {/* botones de navegacion en la parte derecha del navbar */}
         {/* ----------------------------------------------- */}
-        <ul className="list-none hidden sm:flex flex-row gap-10">
+        <ul className="list-none hidden md:flex flex-row gap-10">
+          <div id="flags" className="flags">
+            <div className="flags__item" data-languaje="es">
+              <img
+                src={es}
+                alt=""
+                onClick={(e) => {
+                  handleLanguage(e);
+                }}
+              />
+            </div>
+            <div className="flags__item" data-languaje="en">
+              <img
+                src={en}
+                alt=""
+                onClick={(e) => {
+                  handleLanguage(e);
+                }}
+              />
+            </div>
+          </div>
+
           {navLinks.map((link) => (
             <li
               key={link.id}
@@ -51,7 +88,7 @@ const Navbar = () => {
         {/* Opcion donde se comprimen los botones de navegacion en small deivices */}
         {/* ----------------------------------------------- */}
 
-        <div className="sm:hidden flex flex-1 justify-end items-center">
+        <div className="md:hidden flex flex-1 justify-end items-center">
           <img
             src={toggle ? close : menu}
             alt="menu"
@@ -64,6 +101,26 @@ const Navbar = () => {
             } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
           >
             <ul className="list-none flex justify-end items-start flex-col gap-4">
+              <div id="flags" className="flags">
+                <div className="flags__item" data-languaje="es">
+                  <img
+                    src={es}
+                    alt=""
+                    onClick={(e) => {
+                      handleLanguage(e);
+                    }}
+                  />
+                </div>
+                <div className="flags__item" data-languaje="en">
+                  <img
+                    src={en}
+                    alt=""
+                    onClick={(e) => {
+                      handleLanguage(e);
+                    }}
+                  />
+                </div>
+              </div>
               {navLinks.map((link) => (
                 <li
                   key={link.id}

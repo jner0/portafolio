@@ -34,6 +34,9 @@ import calendar from "./calendar.png";
 import instagram from "./instagram.png";
 import linkedin from "./linkedin.png";
 
+import es from "./flags/es.svg";
+import en from "./flags/gb.svg";
+
 export {
   logo,
   logo2,
@@ -66,4 +69,6 @@ export {
   calendar,
   instagram,
   linkedin,
+  es,
+  en,
 };
