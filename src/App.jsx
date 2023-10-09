@@ -26,10 +26,10 @@ const App = () => {
         <About language={language} />
         <Experience language={language} />
         <Tech />
-        <Works />
+        <Works language={language} />
         {/* <Feedbacks /> */}
         <div className="relative z-0">
-          <Contact />
+          <Contact language={language} />
           <StarsCanvas />
         </div>
         <Footer />

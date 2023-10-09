@@ -6,13 +6,14 @@ import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
+import { lan } from "../constants/language";
 
 //EmailJs.com
 //template_ufayh3g
 //service_uhmmkrm
 //v86K6w2FYXfex1Ovf
 
-const Contact = () => {
+const Contact = ({ language }) => {
   const formRef = useRef();
   const [form, setForm] = useState({
     name: "",
@@ -70,7 +71,9 @@ const Contact = () => {
         className="flex-[0.75] bg-black-100 p-8 rounded-2xl"
       >
         <p className={styles.sectionSubText}>Get in Touch</p>
-        <h3 className={styles.sectionHeadText}>Contáctame.</h3>
+        <h3 className={styles.sectionHeadText}>
+          {language === lan.ES ? "Contáctame" : "Contact  me"}
+        </h3>
 
         <form
           ref={formRef}
@@ -78,37 +81,47 @@ const Contact = () => {
           className="mt-12 flex flex-col gap-8"
         >
           <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Nombre</span>
+            <span className="text-white font-medium mb-4">
+              {language === lan.ES ? "Nombre" : "Name"}
+            </span>
             <input
               type="text"
               name="name"
               value={form.name}
               onChange={handleChange}
-              placeholder="Cuál es tu nombre?"
+              placeholder={
+                language === lan.ES ? "Cuál es tu nombre?" : "What's your name?"
+              }
               className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outlined-none border-none font-medium"
             />
           </label>
 
           <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Email</span>
+            <span className="text-white font-medium mb-4">
+              {language === lan.ES ? "Correo" : "Email"}
+            </span>
             <input
               type="email"
               name="email"
               value={form.email}
               onChange={handleChange}
-              placeholder="Cuál es tu email?"
+              placeholder={
+                language === lan.ES ? "Cuál es tu email?" : "What's your email?"
+              }
               className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outlined-none border-none font-medium"
             />
           </label>
 
           <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Tú Mensaje</span>
+            <span className="text-white font-medium mb-4">
+              {language === lan.ES ? "Mensaje" : "Message"}
+            </span>
             <textarea
               rows="7"
               name="message"
               value={form.message}
               onChange={handleChange}
-              placeholder="Mensaje?"
+              placeholder={language === lan.ES ? "Tu mensaje" : "Your message"}
               className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outlined-none border-none font-medium"
             />
           </label>

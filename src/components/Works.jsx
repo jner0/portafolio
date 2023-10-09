@@ -6,6 +6,7 @@ import { github } from "../assets";
 import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
+import { lan } from "../constants/language";
 
 const ProjectCard = ({
   index,
@@ -62,12 +63,16 @@ const ProjectCard = ({
   );
 };
 
-const Works = () => {
+const Works = ({ language }) => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText}>Mis proyectos</p>
-        <h2 className={styles.sectionHeadText}>Proyectos..</h2>
+        <p className={styles.sectionSubText}>
+          {language === lan.ES ? "Mis proyectos" : "My projects"}
+        </p>
+        <h2 className={styles.sectionHeadText}>
+          {language === lan.ES ? "Proyectos.." : "Projects.."}
+        </h2>
       </motion.div>
 
       <div className="w-full flex">
@@ -75,11 +80,9 @@ const Works = () => {
           variants={fadeIn("", "", 0.1, 1)}
           className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]"
         >
-          A continuación se mostrarán algunos de los proyectos que he realizado
-          y demuestran mis habilidades y conocimientos. Cada proyecto tiene su
-          link a su respectivo repositorio. En mi perfil de Github podrán
-          observar los diferentes proyectos en los que estoy trabajando
-          actualmente y que he realizado.
+          {language === lan.ES
+            ? "A continuación se pueden observar algunos de los proyectos que he realizado. Cada proyecto tiene su link a su respectivo repositorio. En mi perfil de Github podrán observar los diferentes proyectos en los que estoy trabajando actualmente y que he realizado."
+            : "Below you can see some of the projects I have done. Each project has its link to its respective repository. In my Github profile you can see the different projects that I am currently working on and that I have carried out."}
         </motion.p>
       </div>
 

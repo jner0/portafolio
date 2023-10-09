@@ -57,7 +57,11 @@ const Navbar = ({ language, setLanguage }) => {
         {/* ----------------------------------------------- */}
         <ul className="list-none hidden md:flex flex-row gap-10">
           <div id="flags" className="flags">
-            <div className="flags__item" data-languaje="es">
+            <div
+              className="flags__item"
+              data-languaje="es"
+              style={{ cursor: "pointer" }}
+            >
               <img
                 src={es}
                 alt=""
@@ -66,7 +70,11 @@ const Navbar = ({ language, setLanguage }) => {
                 }}
               />
             </div>
-            <div className="flags__item" data-languaje="en">
+            <div
+              className="flags__item"
+              data-languaje="en"
+              style={{ cursor: "pointer" }}
+            >
               <img
                 src={en}
                 alt=""

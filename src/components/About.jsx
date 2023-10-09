@@ -34,7 +34,6 @@ const ServiceCard = ({ index, title, icon }) => {
 };
 
 const About = ({ language }) => {
-  console.log("laan", language);
   return (
     <>
       <motion.div variants={textVariant()}>
