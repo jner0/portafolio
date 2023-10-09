@@ -2,8 +2,9 @@ import { motion } from "framer-motion";
 
 import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
+import { lan } from "../constants/language";
 
-const Hero = () => {
+const Hero = ({ language }) => {
   return (
     <section className="relative w-full h-screen mx-auto">
       <div
@@ -15,10 +16,20 @@ const Hero = () => {
         </div>
         <div>
           <h1 className={`${styles.heroHeadText} text-white`}>
-            Hola, soy <span className="text-[#915eff]">Nemecio</span>
+            {language === lan.ES ? (
+              <>
+                Hola, soy <span className="text-[#915eff]">Nemecio</span>
+              </>
+            ) : (
+              <>
+                Hi, I'm <span className="text-[#915eff]">Nemecio</span>
+              </>
+            )}
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            Desarrollador de software
+            {language === lan.ES
+              ? "Desarrollador de software"
+              : "Software Developer"}
           </p>
         </div>
       </div>

@@ -12,17 +12,19 @@ import {
   StarsCanvas,
 } from "./components";
 import Footer from "./components/footer";
+import { useState } from "react";
 
 const App = () => {
+  const [language, setLanguage] = useState("");
   return (
     <BrowserRouter>
       <div className="relative z-0 bg-primary">
         <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
-          <Navbar />
-          <Hero />
+          <Navbar language={language} setLanguage={setLanguage} />
+          <Hero language={language} />
         </div>
-        <About />
-        <Experience />
+        <About language={language} />
+        <Experience language={language} />
         <Tech />
         <Works />
         {/* <Feedbacks /> */}
@@ -30,7 +32,7 @@ const App = () => {
           <Contact />
           <StarsCanvas />
         </div>
-        <Footer/>
+        <Footer />
       </div>
     </BrowserRouter>
   );

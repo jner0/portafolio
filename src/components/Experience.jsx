@@ -7,9 +7,10 @@ import { motion } from "framer-motion";
 import "react-vertical-timeline-component/style.min.css";
 
 import { styles } from "../styles";
-import { experiences } from "../constants";
+import { experiences, experiencesSpanish } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
+import { lan } from "../constants/language";
 
 const ExperienceCard = ({ experience }) => (
   <VerticalTimelineElement
@@ -50,19 +51,32 @@ const ExperienceCard = ({ experience }) => (
   </VerticalTimelineElement>
 );
 
-const Experience = () => {
+const Experience = ({ language }) => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText}>Lo que he hecho hasta ahora</p>
-        <h2 className={styles.sectionHeadText}>Experiencia laboral .</h2>
+        {language === lan.ES ? (
+          <>
+            <p className={styles.sectionSubText}>Lo que he hecho hasta ahora</p>
+            <h2 className={styles.sectionHeadText}>Experiencia laboral.</h2>
+          </>
+        ) : (
+          <>
+            <p className={styles.sectionSubText}>What I have done so far</p>
+            <h2 className={styles.sectionHeadText}>Work experience.</h2>
+          </>
+        )}
       </motion.div>
 
       <div className="mt-20 flex flex-col">
         <VerticalTimeline>
-          {experiences.map((experience, index) => (
-            <ExperienceCard key={index} experience={experience} />
-          ))}
+          {language === lan.ES
+            ? experiencesSpanish.map((experience, index) => (
+                <ExperienceCard key={index} experience={experience} />
+              ))
+            : experiences.map((experience, index) => (
+                <ExperienceCard key={index} experience={experience} />
+              ))}
         </VerticalTimeline>
       </div>
     </>

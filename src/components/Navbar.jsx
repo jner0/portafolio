@@ -2,29 +2,34 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { styles } from "../styles";
-import { navLinks } from "../constants";
+import { navLinks, navLinksSpanish } from "../constants";
 import { logo, menu, close, en, es } from "../assets";
+import { lan } from "../constants/language";
 
-const Navbar = () => {
+const Navbar = ({ language, setLanguage }) => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
 
-  const changeLanguage = async (language) => {
-    //console.log(data);
-    const requestJson = await fetch("../translations/en.json");
-    console.log(requestJson);
-    //   if (!requestJson.ok) {
-    //     throw new Error(`Failed to fetch: ${requestJson.statusText}`);
-    //   }
-    //   //const texts = await requestJson.json();
-    //   //console.log(texts);
-    // } catch (error) {
-    //   console.error("Error fetching translation:", error);
-    // }
+  const changeLanguage = async (data) => {
+    setLanguage(data);
   };
 
   const handleLanguage = (e) => {
     changeLanguage(e.target.parentElement.dataset.languaje);
+  };
+
+  const mapLinks = (linksArray) => {
+    return linksArray.map((link) => (
+      <li
+        key={link.id}
+        className={`${
+          active === link.title ? "text-white" : "text-secondary"
+        } hover:text-white text-[18px] font-medium cursor-pointer`}
+        onClick={() => setActive(link.title)}
+      >
+        <a href={`#${link.id}`}>{link.title}</a>
+      </li>
+    ));
   };
 
   return (
@@ -72,17 +77,7 @@ const Navbar = () => {
             </div>
           </div>
 
-          {navLinks.map((link) => (
-            <li
-              key={link.id}
-              className={`${
-                active === link.title ? "text-white" : "text-secondary"
-              } hover:text-white text-[18px] font-medium cursor-pointer`}
-              onClick={() => setActive(link.title)}
-            >
-              <a href={`#${link.id}`}>{link.title}</a>
-            </li>
-          ))}
+          {language === lan.ES ? mapLinks(navLinksSpanish) : mapLinks(navLinks)}
         </ul>
 
         {/* Opcion donde se comprimen los botones de navegacion en small deivices */}
@@ -121,20 +116,35 @@ const Navbar = () => {
                   />
                 </div>
               </div>
-              {navLinks.map((link) => (
-                <li
-                  key={link.id}
-                  className={`${
-                    active === link.title ? "text-white" : "text-secondary"
-                  } font-poppins font-medium cursor-pointer text-[16px]`}
-                  onClick={() => {
-                    setActive(link.title);
-                    setToggle(!toggle);
-                  }}
-                >
-                  <a href={`#${link.id}`}>{link.title}</a>
-                </li>
-              ))}
+              {language === lan.ES
+                ? navLinksSpanish.map((link) => (
+                    <li
+                      key={link.id}
+                      className={`${
+                        active === link.title ? "text-white" : "text-secondary"
+                      } font-poppins font-medium cursor-pointer text-[16px]`}
+                      onClick={() => {
+                        setActive(link.title);
+                        setToggle(!toggle);
+                      }}
+                    >
+                      <a href={`#${link.id}`}>{link.title}</a>
+                    </li>
+                  ))
+                : navLinks.map((link) => (
+                    <li
+                      key={link.id}
+                      className={`${
+                        active === link.title ? "text-white" : "text-secondary"
+                      } font-poppins font-medium cursor-pointer text-[16px]`}
+                      onClick={() => {
+                        setActive(link.title);
+                        setToggle(!toggle);
+                      }}
+                    >
+                      <a href={`#${link.id}`}>{link.title}</a>
+                    </li>
+                  ))}
             </ul>
           </div>
         </div>

@@ -40,6 +40,21 @@ export const navLinks = [
   },
 ];
 
+export const navLinksSpanish = [
+  {
+    id: "about",
+    title: "Acerca de",
+  },
+  {
+    id: "work",
+    title: "Experiencia",
+  },
+  {
+    id: "contact",
+    title: "Contáctame",
+  },
+];
+
 const services = [
   {
     title: "Frontend Developer",
@@ -113,8 +128,60 @@ const technologies = [
     icon: docker,
   },
 ];
-
 const experiences = [
+  {
+    title: "Internships",
+    company_name: "Rhelec Ingeniería",
+    icon: antena,
+    iconBg: "#FFFFFF",
+    date: "Jan 2018 - May 2018",
+    points: [
+      "Management of Tickets and incidents for Electrical, mechanical and Telecommunications solutions.",
+      "Collaboration with different teams for the operation and preventive, corrective and emergent maintenance of radio bases.",
+      "Use of analytical and data visualization tools to collect information related to KPI management indicators.",
+    ],
+  },
+  {
+    title: "IT Assistant and Technical Support",
+    company_name: "Centro Ecuatoriano Norteamericano",
+    icon: cen2,
+    iconBg: "#FFFFFF",
+    date: "Oct 2018 - Dec 2022",
+    points: [
+      "Provide technical assistance to collaborators and clients, effectively resolving technical problems and queries.",
+      "Continuous inspections and hardware and software updates on equipment and servers to prevent failures.",
+      "Equipment maintenance and installation and configuration of hardware and software.",
+      "Integration and deployment of technological resources.",
+    ],
+  },
+  {
+    title: "IT Assistant and Technical Support",
+    company_name: "PIL S.A.",
+    icon: pil,
+    iconBg: "#FFFFFF",
+    date: "Jan 2023 - Feb 2023",
+    points: [
+      "Maintenance and cleaning of computer equipment.",
+      "Installation of servers and equipment for the use of collaborators.",
+      "Implementation of network infrastructures.",
+    ],
+  },
+  {
+    title: "Software Developer",
+    company_name: "Kruger",
+    icon: kruger,
+    iconBg: "#FFFFFF",
+    date: "Feb 2023 - Present",
+    points: [
+      "Development and maintenance of Web applications using React.js and other related technologies in the Front-end of the application.",
+      "Implementation of services and screens for the company's planning systems (ERP).",
+      "Documentation of the different APIs and services developed.",
+      "Database usage and script implementation",
+    ],
+  },
+];
+
+const experiencesSpanish = [
   {
     title: "Pasantías",
     company_name: "Rhelec Ingeniería",
@@ -124,20 +191,20 @@ const experiences = [
     points: [
       "Gestión de Tickets e incidencias para soluciones Eléctricas, mecánicas y de Telecomunicaciones.",
       "Colaboración con diferentes equipos para la operación y mantenimiento preventivo, correctivo y emergente de radiobases.",
-      "Uso herramientas analíticas y de visualización de datos pare recopilar información relacionada con Indicadores de gestión KPI.",
+      "Uso de herramientas analíticas y de visualización de datos para recopilar información relacionada con Indicadores de gestión KPI.",
     ],
   },
   {
-    title: "Soporte Técnico",
-    company_name: "CEN",
+    title: "Ingeniero de sistemas y Soporte Técnico",
+    company_name: "Centro Ecuatoriano Norteamericano",
     icon: cen2,
     iconBg: "#FFFFFF",
     date: "Oct 2018 - Dec 2022",
     points: [
-      "Proporcioné asistencia técnica a colaboradores y clientes, resolviendo eficazmente problemas y consultas relacionados con sistemas.",
-      "Realicé inspecciones regulares y actualizaciones de hardware y software en equipos y servidores para prevenir fallas.",
-      "instalación y configuración de software y hardware esenciales, adaptando soluciones tecnológicas a las necesidades específicas.",
-      "integración y despliegue de recursos tecnológicos.",
+      "Brindar asistencia técnica a colaboradores y clientes, resolviendo eficazmente problemas y consultas técnicas.",
+      "Inspecciones continuas y actualizaciones de hardware y software en equipos y servidores para prevenir fallas.",
+      "Mantenimiento de equipos e instalación y configuración de harware y software.",
+      "Integración y despliegue de recursos tecnológicos.",
     ],
   },
   {
@@ -153,13 +220,13 @@ const experiences = [
     ],
   },
   {
-    title: "Consultor Técnico",
+    title: "Desarrollador de software",
     company_name: "Kruger",
     icon: kruger,
     iconBg: "#FFFFFF",
     date: "Feb 2023 - Present",
     points: [
-      "Desarrollo y mantenimiento de aplicaciones Web usando React.js y otras tecnologías relacionadas.",
+      "Desarrollo y mantenimiento de aplicaciones Web usando React.js y otras tecnologías relacionadas en el Front-end de la aplicación.",
       "Implementación de servicios y pantallas para el sistemas de planificación (ERP) de la empresa.",
       "Documentación de las diferentes APIs y servicios desarrollados.",
       "Uso de base de datos e implementación de scripts",
@@ -256,4 +323,11 @@ const projects = [
   },
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+export {
+  services,
+  technologies,
+  experiences,
+  experiencesSpanish,
+  testimonials,
+  projects,
+};
